@@ -46,15 +46,15 @@ The assignment requires at least 10 separate pages. This project plan uses the f
 1. `index.html` - Home page
 2. `about.html` - Project and client background
 3. `categories.html` - Quiz category selection
-4. `easy-quiz.php` - Easy difficulty quiz
-5. `medium-quiz.php` - Medium difficulty quiz
-6. `hard-quiz.php` - Hard difficulty quiz
+4. `easyquiz.php` - Easy difficulty quiz
+5. `mediumquiz.php` - Medium difficulty quiz
+6. `hardquiz.php` - Hard difficulty quiz
 7. `leaderboard.php` - Score rankings
 8. `contact.html` - Contact or feedback page
 9. `login.php` - User and admin login
 10. `register.php` - Account creation
-11. `admin-dashboard.php` - Admin control panel
-12. `manage-questions.php` - Add, edit, and delete questions
+11. `admindashboard.php` - Admin control panel
+12. `managequestions.php` - Add, edit, and delete questions
 
 If you want to keep the total page count closer to 10, `register.php` or `contact.html` could be merged later, but keeping them separate usually makes the site clearer.
 
@@ -68,18 +68,18 @@ If you want to keep the total page count closer to 10, `register.php` or `contac
 |-- contact.html
 |-- login.php
 |-- register.php
-|-- easy-quiz.php
-|-- medium-quiz.php
-|-- hard-quiz.php
+|-- easyquiz.php
+|-- mediumquiz.php
+|-- hardquiz.php
 |-- leaderboard.php
-|-- admin-dashboard.php
-|-- manage-questions.php
+|-- admindashboard.php
+|-- managequestions.php
 |-- css/
 |   |-- reset.css
 |   `-- style.css
 |-- js/
 |   |-- quiz.js
-|   |-- validation.js
+|   |-- forms.js
 |   `-- admin.js
 |-- images/
 |   `-- ...
@@ -88,7 +88,8 @@ If you want to keep the total page count closer to 10, `register.php` or `contac
 |   |-- header.php
 |   |-- footer.php
 |   |-- auth.php
-|   `-- helpers.php
+|   |-- functions.php
+|   `-- config.php
 `-- sql/
     `-- schema.sql
 ```
@@ -211,6 +212,61 @@ General workflow:
 - `James`: backend, admin features, database setup, authentication, validation
 - `Marissa`: core frontend pages, layout, navigation, responsive design, accessibility text
 - `Yuheng`: quiz UI, answer interaction, JavaScript behavior, styling refinement
+
+## File Ownership Guide
+
+This section maps the proposal work split to the actual project files so everyone knows what they are primarily responsible for.
+
+### James
+
+- `includes/db.php` - database connection setup
+- `includes/auth.php` - login/session protection helpers
+- `includes/functions.php` - reusable backend helper functions
+- `includes/config.php` - app settings and constants
+- `sql/schema.sql` - database schema for users, questions, categories, and scores
+- `login.php` - backend login handling and validation
+- `register.php` - account creation backend
+- `logout.php` - session logout logic
+- `leaderboard.php` - backend score retrieval and ranking data
+- `admindashboard.php` - admin-only backend logic and protected access
+- `managequestions.php` - add, edit, and delete trivia questions
+- `easyquiz.php` - server-side question loading and grading for easy quizzes
+- `mediumquiz.php` - server-side question loading and grading for medium quizzes
+- `hardquiz.php` - server-side question loading and grading for hard quizzes
+
+James is mainly responsible for the database, authentication, server-side validation, quiz grading, admin functionality, and final integration/testing.
+
+### Marissa
+
+- `index.html` - landing page content and layout
+- `about.html` - project/client explanation page
+- `categories.html` - category browsing page layout
+- `contact.html` - contact page content and structure
+- `includes/header.php` - shared header and navbar markup
+- `includes/footer.php` - shared footer markup
+- `css/reset.css` - baseline browser style reset if used
+- `css/style.css` - main shared site styling
+
+Marissa is mainly responsible for the shared site layout, navigation, responsive page structure, media-query behavior, and accessibility-minded content styling.
+
+### Yuheng
+
+- `easyquiz.php` - quiz page UI structure on the frontend side
+- `mediumquiz.php` - quiz page UI structure on the frontend side
+- `hardquiz.php` - quiz page UI structure on the frontend side
+- `js/quiz.js` - answer selection and quiz interaction behavior
+- `js/forms.js` - client-side form handling where needed
+- `js/admin.js` - admin page interaction behavior if any frontend scripting is needed
+
+Yuheng is mainly responsible for quiz interaction patterns, answer selection behavior, client-side UI feedback, and refinement of the quiz page experience.
+
+### Shared Integration
+
+- `leaderboard.php` - backend data by James, table/layout styling by frontend team
+- `login.php` and `register.php` - backend processing by James, form layout/styling by frontend team
+- `easyquiz.php`, `mediumquiz.php`, and `hardquiz.php` - backend logic by James, frontend layout and interaction by Marissa/Yuheng
+
+These pages are shared because they need both backend logic and frontend presentation to feel complete.
 
 ## Next Build Order
 

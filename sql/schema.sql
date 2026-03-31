@@ -1,0 +1,1 @@
+-- James: database schema for users, categories, questions, and quiz attempts goes here.

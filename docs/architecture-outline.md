@@ -38,9 +38,9 @@ The application should be split into three simple layers:
 
 ### Quiz Pages
 
-- `easy-quiz.php`: serves easy questions
-- `medium-quiz.php`: serves medium questions
-- `hard-quiz.php`: serves hard questions
+- `easyquiz.php`: serves easy questions
+- `mediumquiz.php`: serves medium questions
+- `hardquiz.php`: serves hard questions
 - `leaderboard.php`: shows top scores and rankings
 
 ### Auth Pages
@@ -51,8 +51,8 @@ The application should be split into three simple layers:
 
 ### Admin Pages
 
-- `admin-dashboard.php`: summary page for admin actions
-- `manage-questions.php`: add, update, and delete trivia questions
+- `admindashboard.php`: summary page for admin actions
+- `managequestions.php`: add, update, and delete trivia questions
 
 ## 3. Suggested Directory Map
 
@@ -65,12 +65,12 @@ The application should be split into three simple layers:
 |-- login.php
 |-- register.php
 |-- logout.php
-|-- easy-quiz.php
-|-- medium-quiz.php
-|-- hard-quiz.php
+|-- easyquiz.php
+|-- mediumquiz.php
+|-- hardquiz.php
 |-- leaderboard.php
-|-- admin-dashboard.php
-|-- manage-questions.php
+|-- admindashboard.php
+|-- managequestions.php
 |-- css/
 |   |-- reset.css
 |   `-- style.css
@@ -183,7 +183,7 @@ Fields:
 ### Admin Question Management Flow
 
 1. Admin logs in.
-2. Admin opens `manage-questions.php`.
+2. Admin opens `managequestions.php`.
 3. PHP checks the session role.
 4. Admin submits add/edit/delete forms.
 5. PHP validates the data.
@@ -240,7 +240,40 @@ Even for a class project, these basics should be included:
 - Validate HTML and CSS
 - Clean up accessibility issues and naming conventions
 
-## 10. Minimal Viable Version
+## 10. Team Ownership
+
+The project is organized so each teammate can work inside a clear area while still meeting at a few shared integration points.
+
+### James
+
+- Primary files: `includes/db.php`, `includes/auth.php`, `includes/functions.php`, `includes/config.php`, `sql/schema.sql`
+- Main pages: `login.php`, `register.php`, `logout.php`, `leaderboard.php`, `admindashboard.php`, `managequestions.php`
+- Shared quiz/backend pages: `easyquiz.php`, `mediumquiz.php`, `hardquiz.php`
+
+James owns the backend architecture, database schema, authentication/session flow, admin protection, CRUD for questions, score storage, grading logic, and integration testing.
+
+### Marissa
+
+- Primary files: `index.html`, `about.html`, `categories.html`, `contact.html`, `includes/header.php`, `includes/footer.php`, `css/reset.css`, `css/style.css`
+
+Marissa owns the shared layout system, static page content, navbar/footer structure, responsive styling, and accessibility-related presentation decisions.
+
+### Yuheng
+
+- Primary files: `js/quiz.js`, `js/forms.js`, `js/admin.js`
+- Shared quiz pages: `easyquiz.php`, `mediumquiz.php`, `hardquiz.php`
+
+Yuheng owns quiz UI behavior, answer selection logic, client-side interaction feedback, and refinement of the quiz page experience.
+
+### Shared Files
+
+- `login.php` and `register.php` - backend logic plus frontend form structure
+- `leaderboard.php` - backend data plus frontend table presentation
+- `easyquiz.php`, `mediumquiz.php`, `hardquiz.php` - backend question/grading logic plus frontend quiz markup and interaction
+
+These files are shared because they need both server-side behavior and frontend presentation work.
+
+## 11. Minimal Viable Version
 
 If time becomes tight, the minimum strong submission should still include:
 
