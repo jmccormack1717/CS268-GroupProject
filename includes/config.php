@@ -1,1 +1,14 @@
-<?php // James: application settings and constants go here. ?>
+<?php
+
+declare(strict_types=1);
+
+/**
+ * Application configuration.
+ * Adjust database settings to match your local MySQL (e.g. XAMPP / WAMP defaults).
+ */
+
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'techtrivia');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_CHARSET', 'utf8mb4');

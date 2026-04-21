@@ -81,3 +81,11 @@ li.button a:hover {
     width:100%;
     height:12%;
 }
+
+.form-error {
+    color: #ffb3b3;
+}
+
+.form-success {
+    color: #b3ffb3;
+}

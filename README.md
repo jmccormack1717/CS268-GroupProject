@@ -197,9 +197,10 @@ General workflow:
 1. Place the project in your local web server directory if needed.
 2. Create a MySQL database for the app.
 3. Import `sql/schema.sql`.
-4. Update database credentials in `includes/db.php`.
+4. Update database credentials in `includes/config.php` (host, database name, user, password).
 5. Start Apache and MySQL.
 6. Open the site through your local server, not directly by double-clicking the files.
+7. **Admin access:** New accounts are `user` only. After you register, promote your account in MySQL, for example: `UPDATE users SET role = 'admin' WHERE username = 'yourname';` then log in to open `admindashboard.php`.
 
 ## Implementation Notes
 

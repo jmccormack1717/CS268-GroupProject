@@ -95,7 +95,7 @@ The application should be split into three simple layers:
 
 To avoid repeating code across many pages, keep shared logic in small include files:
 
-- `includes/db.php`: opens the MySQL connection
+- `includes/db.php`: opens the MySQL connection via PDO (settings in `config.php`)
 - `includes/config.php`: stores app constants and settings
 - `includes/header.php`: common document head and site header
 - `includes/footer.php`: footer content and shared script tags

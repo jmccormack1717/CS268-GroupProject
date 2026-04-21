@@ -1,1 +1,10 @@
-<?php // James: session logout logic goes here. ?>
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/includes/auth.php';
+
+auth_bootstrap();
+auth_logout();
+redirect('index.html');
