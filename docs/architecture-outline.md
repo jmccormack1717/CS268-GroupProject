@@ -191,7 +191,7 @@ Fields:
 
 ## 7. Frontend Design Rules
 
-The assignment rules strongly shape the architecture:
+The full graded checklist (validators, file naming, external links, database requirements, and more) lives in [`course-expectations.md`](course-expectations.md). Summarized here are the rules that most strongly shape the architecture:
 
 - Do not use React, Vue, Bootstrap, jQuery, or other libraries
 - Use CSS Grid and Flexbox directly
