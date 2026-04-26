@@ -20,9 +20,7 @@ auth_bootstrap();
                 <p><b>Home</b></p>
             </div>
         </div>
-        <div class="footer">
-            <p>This is the footer</p>
-        </div>
+        <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 </body>
 </html>

@@ -2,6 +2,8 @@
 
 This document turns the project proposal into a concrete implementation outline for a vanilla `HTML/CSS/JavaScript/PHP/MySQL` web app.
 
+For a **short current-team checklist** (validators, JS polish, images, etc.), see [`remaining-work.md`](remaining-work.md).
+
 ## 1. High-Level Structure
 
 The application should be split into three simple layers:

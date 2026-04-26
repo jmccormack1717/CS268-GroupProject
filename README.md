@@ -14,6 +14,8 @@ No frontend frameworks or third-party UI libraries should be used.
 
 For the full **graded course expectations** (page count, validators, file naming, images/CSS folders, external links, database requirements, etc.), see [`docs/course-expectations.md`](docs/course-expectations.md).
 
+**What is still open for the team (short checklist):** [`docs/remaining-work.md`](docs/remaining-work.md)
+
 ## Project Goals
 
 - Build a multi-page website with at least 10 meaningful pages

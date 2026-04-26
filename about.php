@@ -24,9 +24,7 @@ $pageTitle = 'About';
                 <p>Tech Trivia is a class project site for an online trivia community. Players can register, take quizzes by difficulty, see scores, and browse a leaderboard. Admins can manage questions.</p>
             </div>
         </div>
-        <div class="footer">
-            <p>This is the footer</p>
-        </div>
+        <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 </body>
 </html>
