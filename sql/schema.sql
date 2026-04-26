@@ -1,4 +1,4 @@
--- Tech Trivia — MySQL schema
+-- Tech Trivia - MySQL schema
 -- Import after creating a database user, or adjust USE below.
 -- Typical local setup: import via phpMyAdmin or `mysql -u root -p < sql/schema.sql`
 
@@ -84,3 +84,10 @@ CREATE TABLE quiz_attempts (
 
 -- Optional: grant admin after registering once (replace username).
 -- UPDATE users SET role = 'admin' WHERE username = 'yourname';
+
+-- Default categories (INSERT IGNORE: safe if names already exist).
+INSERT IGNORE INTO categories (name, description) VALUES
+  ('General', 'General technology trivia'),
+  ('Web', 'HTML, CSS, and the web'),
+  ('Programming', 'Languages and code'),
+  ('Databases', 'SQL and data storage');

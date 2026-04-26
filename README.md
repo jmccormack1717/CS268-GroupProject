@@ -196,7 +196,7 @@ General workflow:
 
 1. Place the project in your local web server directory if needed.
 2. Create a MySQL database for the app.
-3. Import `sql/schema.sql`.
+3. Import `sql/schema.sql` (it creates tables and inserts default categories). If you already imported an older schema with no rows in `categories`, also run `sql/seed_categories.sql` once.
 4. Update database credentials in `includes/config.php` (host, database name, user, password).
 5. Start Apache and MySQL.
 6. Open the site through your local server, not directly by double-clicking the files.
@@ -209,6 +209,8 @@ General workflow:
 - Use server-side validation even if JavaScript validation is also present.
 - Store passwords using PHP password hashing functions.
 - Escape output when rendering database content back to the page.
+
+**Quizzes** (`easyquiz.php`, `mediumquiz.php`, `hardquiz.php`) require a logged-in user. Each run loads `QUIZ_QUESTION_COUNT` questions (default `5` in `includes/config.php`) from a chosen category and difficulty; the database must have at least that many rows for the pair or the page shows an error. The leaderboard is public and reads from `quiz_attempts`.
 
 ## Team Work Split From Proposal
 

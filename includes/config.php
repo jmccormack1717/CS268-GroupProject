@@ -12,3 +12,6 @@ define('DB_NAME', 'techtrivia');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
+
+/** Number of questions per quiz (must have at least this many in DB per category+difficulty). */
+define('QUIZ_QUESTION_COUNT', 5);
