@@ -45,14 +45,14 @@ For the full **graded course expectations** (page count, validators, file naming
 
 The assignment requires at least 10 separate pages. This project plan uses the following pages:
 
-1. `index.html` - Home page (static); `index.php` - same home with session bar (username / log out)
-2. `about.html` - Project and client background
-3. `categories.html` - Quiz category selection
+1. `index.html` - Redirects to `index.php` (canonical home with shared nav and account bar)
+2. `about.html` / `about.php` - Project background (`about.php` has full site chrome; `.html` redirects)
+3. `categories.html` / `categories.php` - Category page (same pattern)
 4. `easyquiz.php` - Easy difficulty quiz
 5. `mediumquiz.php` - Medium difficulty quiz
 6. `hardquiz.php` - Hard difficulty quiz
 7. `leaderboard.php` - Score rankings
-8. `contact.html` - Contact or feedback page
+8. `contact.html` / `contact.php` - Contact page (same pattern)
 9. `login.php` - User and admin login
 10. `register.php` - Account creation
 11. `admindashboard.php` - Admin control panel

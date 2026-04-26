@@ -174,7 +174,6 @@ $leaderLink = 'leaderboard.php';
         <div class="main">
             <div class="content admin-content">
                 <h1><?= h($pageTitle) ?></h1>
-                <p class="admin-nav"><a href="index.php">Home</a> &middot; <a href="categories.html">Categories</a> &middot; <a href="<?= h($leaderLink) ?>">Leaderboard</a> &middot; <a href="logout.php">Log out</a></p>
 
                 <?php if ($mode === 'result' && is_array($showResult)): ?>
                     <p class="form-success">You scored <?= h((string) (int) $showResult['score']) ?> out of <?= h((string) (int) $showResult['total']) ?>

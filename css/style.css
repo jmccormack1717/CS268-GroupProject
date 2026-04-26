@@ -255,9 +255,15 @@ li.button a:hover {
     margin-right: 0.35rem;
 }
 
-.user-bar-score,
-.user-bar-rank {
-    white-space: nowrap;
+.user-bar-rank-inline {
+    margin-left: 0.35rem;
+    font-weight: bold;
+    color: #ffd54f;
+}
+
+.user-bar-muted {
+    color: #ccc;
+    font-weight: normal;
 }
 
 .user-bar-sep {

@@ -36,15 +36,6 @@ if (!is_array($rows)) {
         <div class="main">
             <div class="content admin-content">
                 <h1><?= h($pageTitle) ?></h1>
-                <p class="admin-nav">
-                    <a href="index.php">Home</a> &middot; <a href="categories.html">Categories</a> &middot;
-                    <a href="easyquiz.php">Easy</a> &middot; <a href="mediumquiz.php">Medium</a> &middot; <a href="hardquiz.php">Hard</a>
-                    <?php if (auth_is_logged_in()): ?>
-                        &middot; <a href="logout.php">Log out</a>
-                    <?php else: ?>
-                        &middot; <a href="login.php">Log in</a>
-                    <?php endif; ?>
-                </p>
                 <p>Best scores on record (up to 100 rows). Ties: higher score first, then earlier attempt.</p>
                 <?php if ($rows === []): ?>
                     <p class="form-error">No quiz attempts yet. Take a quiz and submit your answers to appear here.</p>
