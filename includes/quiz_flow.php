@@ -14,18 +14,13 @@ require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/quiz_lib.php';
 
 auth_bootstrap();
-require_login();
+$guest = !auth_is_logged_in();
 
 $difficulty = $QUIZ_DIFFICULTY;
 $selfPage = basename((string) ($_SERVER['PHP_SELF'] ?? 'quiz.php'));
-$uid = auth_user_id();
-if ($uid === null) {
-    redirect('login.php');
-}
-
 $diffLabel = ucfirst($difficulty);
 $pageTitle = $diffLabel . ' quiz';
-$categories = quiz_list_categories();
+$leaderLink = 'leaderboard.php';
 
 $loadError = '';
 $formError = '';
@@ -33,6 +28,17 @@ $questions = [];
 $activeCategoryId = 0;
 $activeCategoryName = '';
 $showResult = null;
+$categories = [];
+$mode = 'need_login';
+$need = (int) QUIZ_QUESTION_COUNT;
+
+if (!$guest) {
+    $uid = auth_user_id();
+    if ($uid === null) {
+        redirect('login.php');
+    }
+
+    $categories = quiz_list_categories();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && (string) ($_POST['form'] ?? '') === 'submit_quiz') {
     $active = $_SESSION['active_quiz'] ?? null;
@@ -109,7 +115,6 @@ if ($justFinished) {
 }
 
 $mode = 'pick';
-$need = (int) QUIZ_QUESTION_COUNT;
 
 if (!is_array($showResult) && $formError === '') {
     $catGet = isset($_GET['category']) ? (int) $_GET['category'] : 0;
@@ -159,7 +164,7 @@ if ($loadError !== '') {
     $mode = 'load_error';
 }
 
-$leaderLink = 'leaderboard.php';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +180,10 @@ $leaderLink = 'leaderboard.php';
             <div class="content admin-content">
                 <h1><?= h($pageTitle) ?></h1>
 
-                <?php if ($mode === 'result' && is_array($showResult)): ?>
+                <?php if ($mode === 'need_login'): ?>
+                    <p>Log in to play this quiz and save your scores.</p>
+                    <p><a href="login.php">Log in</a> &middot; <a href="register.php">Register</a></p>
+                <?php elseif ($mode === 'result' && is_array($showResult)): ?>
                     <p class="form-success">You scored <?= h((string) (int) $showResult['score']) ?> out of <?= h((string) (int) $showResult['total']) ?>
                         (<?= h($diffLabel) ?>, <?= h((string) $showResult['cat']) ?>).</p>
                     <p>
