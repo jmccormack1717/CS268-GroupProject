@@ -255,6 +255,11 @@ li.button a:hover {
     margin-right: 0.35rem;
 }
 
+.user-bar-score,
+.user-bar-rank {
+    white-space: nowrap;
+}
+
 .user-bar-sep {
     margin: 0 0.35rem;
     opacity: 0.75;

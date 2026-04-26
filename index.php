@@ -16,9 +16,7 @@ auth_bootstrap();
     <?php require __DIR__ . '/includes/userbar.php'; ?>
     <div id="container">
         <div class="header">
-            <?php if (auth_is_logged_in()): ?>
-                <a href="logout.php" class="tButton">Log out</a>
-            <?php else: ?>
+            <?php if (!auth_is_logged_in()): ?>
                 <a href="login.php" class="tButton">Log in</a>
             <?php endif; ?>
             <br>
