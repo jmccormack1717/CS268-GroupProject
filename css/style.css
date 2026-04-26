@@ -224,3 +224,57 @@ li.button a:hover {
     margin: 0.35rem 0;
     font-weight: normal;
 }
+
+/* Account strip (all PHP pages via header; index.php and static home include explicitly) */
+.user-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.35rem 0.65rem;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    font-size: 0.82rem;
+    border-radius: 0 0 0.4rem 0;
+    line-height: 1.35;
+}
+
+.user-bar a {
+    color: #cce4ff;
+    text-decoration: none;
+}
+
+.user-bar a:hover {
+    text-decoration: underline;
+}
+
+.user-bar-name {
+    font-weight: bold;
+    margin-right: 0.35rem;
+}
+
+.user-bar-sep {
+    margin: 0 0.35rem;
+    opacity: 0.75;
+}
+
+.user-bar-static {
+    font-size: 0.8rem;
+}
+
+a.admin-badge {
+    display: inline-block;
+    margin-left: 0.2rem;
+    color: #ffd54f;
+    text-decoration: none;
+    font-size: 1.05rem;
+    line-height: 1;
+    vertical-align: middle;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+a.admin-badge:hover {
+    color: #fff;
+}

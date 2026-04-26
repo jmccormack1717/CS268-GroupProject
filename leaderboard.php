@@ -37,7 +37,7 @@ if (!is_array($rows)) {
             <div class="content admin-content">
                 <h1><?= h($pageTitle) ?></h1>
                 <p class="admin-nav">
-                    <a href="index.html">Home</a> &middot; <a href="categories.html">Categories</a> &middot;
+                    <a href="index.php">Home</a> &middot; <a href="categories.html">Categories</a> &middot;
                     <a href="easyquiz.php">Easy</a> &middot; <a href="mediumquiz.php">Medium</a> &middot; <a href="hardquiz.php">Hard</a>
                     <?php if (auth_is_logged_in()): ?>
                         &middot; <a href="logout.php">Log out</a>

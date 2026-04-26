@@ -34,7 +34,7 @@ $pageTitle = 'Admin dashboard';
                     <li><a href="managequestions.php">Manage questions</a></li>
                     <li><a href="leaderboard.php">Leaderboard</a> (public)</li>
                     <li><a href="logout.php">Log out</a></li>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                 </ul>
             </div>
         </div>

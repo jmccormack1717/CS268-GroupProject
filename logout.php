@@ -7,4 +7,4 @@ require_once __DIR__ . '/includes/auth.php';
 
 auth_bootstrap();
 auth_logout();
-redirect('index.html');
+redirect('index.php');

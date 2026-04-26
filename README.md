@@ -45,7 +45,7 @@ For the full **graded course expectations** (page count, validators, file naming
 
 The assignment requires at least 10 separate pages. This project plan uses the following pages:
 
-1. `index.html` - Home page
+1. `index.html` - Home page (static); `index.php` - same home with session bar (username / log out)
 2. `about.html` - Project and client background
 3. `categories.html` - Quiz category selection
 4. `easyquiz.php` - Easy difficulty quiz
@@ -196,8 +196,8 @@ General workflow:
 
 1. Place the project in your local web server directory if needed.
 2. Create a MySQL database for the app.
-3. Import `sql/schema.sql` (it creates tables and inserts default categories). If you already imported an older schema with no rows in `categories`, also run `sql/seed_categories.sql` once.
-4. Update database credentials in `includes/config.php` (host, database name, user, password).
+3. Import `sql/schema.sql` in phpMyAdmin (**Import** tab) or via the MySQL client. It creates the **`techtrivia`** database, tables, and default categories. Until you do this, PHP pages will fail with **Unknown database 'techtrivia'**. If you already have an old database without categories, also run `sql/seed_categories.sql` once.
+4. Update database credentials in `includes/config.php` (host, database name, user, password) if yours differ from the defaults.
 5. Start Apache and MySQL.
 6. Open the site through your local server, not directly by double-clicking the files.
 7. **Admin access:** New accounts are `user` only. After you register, promote your account in MySQL, for example: `UPDATE users SET role = 'admin' WHERE username = 'yourname';` then log in to open `admindashboard.php`.

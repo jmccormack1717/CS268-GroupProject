@@ -9,7 +9,7 @@ require_once __DIR__ . '/includes/auth.php';
 auth_bootstrap();
 
 if (auth_is_logged_in()) {
-    redirect(auth_is_admin() ? 'admindashboard.php' : 'index.html');
+    redirect(auth_is_admin() ? 'admindashboard.php' : 'index.php');
 }
 
 $errors = [];
@@ -113,7 +113,7 @@ $pageTitle = 'Register';
                     </p>
                 </form>
                 <p><a href="login.php">Already have an account? Log in</a></p>
-                <p><a href="index.html">Back to home</a></p>
+                <p><a href="index.php">Back to home</a></p>
             </div>
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>

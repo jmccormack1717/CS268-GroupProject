@@ -64,7 +64,7 @@ function require_login(): void
 function require_admin(): void
 {
     if (!auth_is_admin()) {
-        redirect('index.html');
+        redirect('index.php');
     }
 }
 

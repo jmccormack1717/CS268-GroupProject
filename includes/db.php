@@ -30,7 +30,20 @@ function db(): PDO
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
 
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+    try {
+        $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+    } catch (PDOException $e) {
+        $m = $e->getMessage();
+        if (str_contains($m, '1049') || str_contains($m, 'Unknown database')) {
+            http_response_code(503);
+            header('Content-Type: text/plain; charset=UTF-8');
+            echo "MySQL database is missing (expected name: " . DB_NAME . ").\n\n"
+                . "Fix: open phpMyAdmin, use the Import tab, and run sql/schema.sql from this project.\n"
+                . "That file creates the database and tables. Then reload this page.\n";
+            exit;
+        }
+        throw $e;
+    }
 
     return $pdo;
 }

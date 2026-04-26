@@ -1,5 +1,10 @@
-<!-- Marissa: Home page layout and content go here. -->
-<!-- Use index.php for the same layout with your username and a working account bar. -->
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/includes/auth.php';
+auth_bootstrap();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +13,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="user-bar user-bar-static" role="navigation" aria-label="Account">
-        <a href="index.php">Home (signed-in view)</a>
-        <span class="user-bar-sep">|</span>
-        <a href="login.php">Log in</a>
-        <span class="user-bar-sep">|</span>
-        <a href="logout.php">Log out</a>
-    </div>
+    <?php require __DIR__ . '/includes/userbar.php'; ?>
     <div id="container">
         <div class="header">
-            <a href="login.php" class="tButton">Login</a>
+            <?php if (auth_is_logged_in()): ?>
+                <a href="logout.php" class="tButton">Log out</a>
+            <?php else: ?>
+                <a href="login.php" class="tButton">Log in</a>
+            <?php endif; ?>
             <br>
             <h1>Tech Trivia</h1>
             <ul class="button">
