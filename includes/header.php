@@ -9,10 +9,8 @@ require __DIR__ . '/userbar.php';
 <div class="header">
     <?php if (auth_is_logged_in()): ?>
         <a href="logout.php" class="tButton">Log out</a>
-    <?php else: ?>
-        <a href="login.php" class="tButton">Log in</a>
+        <br>
     <?php endif; ?>
-    <br>
     <h1>Tech Trivia</h1>
     <ul class="button">
         <li class="button"><a href="index.php">Home</a></li>
