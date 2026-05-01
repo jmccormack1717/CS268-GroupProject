@@ -127,6 +127,11 @@ li.button a:hover {
     align-items: center;
     width: 350px;
 }
+.formContact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 form{
     display:flex;
     flex-direction: column;
