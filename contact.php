@@ -20,8 +20,25 @@ $pageTitle = 'Contact';
         <?php require __DIR__ . '/includes/header.php'; ?>
         <div class="main">
             <div class="content">
-                <p><b>Contact</b></p>
-                <p>Use this page for course or client contact information.</p>
+                <h1><B>Contact Us!</B></h1>
+                    <div class="formContact">
+                        <form name="Contact Us!" action="#" onsubmit="checkit(); return false;">
+                        
+                        <label>Name: </label>
+                        <input type= "text" name="name">
+                        <br>
+            
+                        <label>E-mail: </label>
+                        <input type="text" name="email">
+                        <br>
+
+                        <label>Comment: </label>
+                        <textarea name="comment" rows="6" cols="30"></textarea>
+                        <br>
+                        
+                        <button type="submit">Submit</button>
+                        
+                        </form>
             </div>
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
