@@ -20,7 +20,7 @@ $pageTitle = 'About';
         <?php require __DIR__ . '/includes/header.php'; ?>
         <div class="main">
             <div class="content">
-                <p><b>About</b></p>
+                <h1><b>About</b></h1>
                 <div class="aboutContent">
                         <p class="intro">Tech Trivia is a course website for an online trivia community that wants a fun, interactive way to test their technology knowledge. </p>
                         
