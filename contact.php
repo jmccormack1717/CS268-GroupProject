@@ -39,6 +39,7 @@ $pageTitle = 'Contact';
                         <button type="submit">Submit</button>
                         
                         </form>
+                </div>
             </div>
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
