@@ -132,10 +132,7 @@ li.button a:hover {
     flex-direction: column;
     align-items: center;
 }
-form{
-    display:flex;
-    flex-direction: column;
-}
+
 label {
     text-align: left;
     margin-top: 10px;
@@ -190,8 +187,8 @@ textarea {
 .catImage{
     width:30px;
 }
-.index > a{
-    background-color: rgb(0, 60, 255);
+.aboutIndex > a{
+    background-color: rgb(248, 178, 222);
     color:white;
     text-decoration: none;
     border-radius: 5px;
@@ -235,6 +232,11 @@ textarea {
     min-height: 2rem;
     flex-shrink: 0;
     background-color: rgb(0, 60, 255);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.footer > a{
     color: white;
 }
 
