@@ -45,8 +45,6 @@ $pageTitle = 'Categories';
                     
                 </div>
             </div>
-            </div>
-        </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 </body>
