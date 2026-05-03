@@ -84,6 +84,24 @@ li.button a:hover {
     align-items: center;
     flex-direction: column;
 }
+
+/* Inline links on blue background — :where() keeps specificity low so
+   .aboutIndex > a, .catContent a, .footer > a, li.button a, etc. still win. */
+:where(.content) a:link,
+:where(.content) a:visited {
+    color: #ffe9a8;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
+
+:where(.content) a:hover {
+    color: #fffdf5;
+}
+
+:where(.content) a:active {
+    color: #ffd54f;
+}
+
 .aboutContent{
     width: 70%;
     display: flex;
@@ -450,7 +468,7 @@ textarea {
 }
 
 .user-bar a {
-    color: #cce4ff;
+    color: #ffe9a8;
     text-decoration: none;
 }
 
