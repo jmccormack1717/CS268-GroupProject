@@ -22,9 +22,9 @@ $pageTitle = 'Contact';
             <div class="content">
                 <h1>Contact Us</h1>
                 <div class="contact-static">
-                    <p class="intro">If you have questions, ideas, or feedback about Tech Trivia, reach out by email. We read messages about the site, the question bank, and how we can improve the quiz experience.</p>
-                    <p>Email: <a href="mailto:contact@techtrivia.example">contact@techtrivia.example</a></p>
-                    <p class="contact-note">This page is for contact information only; messages are not submitted through the website.</p>
+                    <p class="intro">Questions about the quizzes, scoring, or something not working on the site? Ideas for new categories or questions? Send us a note—we check this inbox regularly and do our best to reply within a couple of days.</p>
+                    <p>Email the team: <a href="mailto:hello@techtrivia.net">hello@techtrivia.net</a></p>
+                    <p class="contact-note">We do not collect messages through this page; please use your own email app to reach us at the address above.</p>
                 </div>
             </div>
         </div>

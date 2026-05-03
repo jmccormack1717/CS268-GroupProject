@@ -22,15 +22,15 @@ auth_bootstrap();
                         <div class="aboutIndex">
                             <h3>About Tech Trivia</h3>
                             <p>Tech Trivia is for people who like technology and for people who like quiz games. Choose a difficulty, answer technology questions, then compare your score on the leaderboard.</p>
-                            <a href="about.html">Learn More</a>
+                            <a href="about.php">Learn More</a>
                         </div>
 
                         <div class="challenge">
                             <img class="leftImg" src="images/questionmarkhi.png" alt="Question mark icon">
                             <div class="aboutIndex">
                                 <h3>Choose Your Challenge</h3>
-                                <p>Select a difficulty on the next page when you are ready to begin.</p>
-                                <a class="button" href="categories.html">Start a quiz</a>
+                                <p>Open the easy quiz to pick a category and begin (sign in first if you have not already).</p>
+                                <a class="button" href="easyquiz.php">Start a quiz</a>
                             </div>
                             <img class="rightImg" src="images/brain.png" alt="Cartoon brain illustration">
                         </div>
