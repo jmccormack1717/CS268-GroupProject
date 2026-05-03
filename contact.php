@@ -21,24 +21,14 @@ $pageTitle = 'Contact';
         <div class="main">
             <div class="content">
                 <h1>Contact Us</h1>
-                    <div class="formContact">
-                        <form class="contact-form" method="post" action="#">
-                        <label for="contact-name">Name</label>
-                        <input type="text" name="name" id="contact-name" autocomplete="name">
-
-                        <label for="contact-email">E-mail</label>
-                        <input type="email" name="email" id="contact-email" autocomplete="email">
-
-                        <label for="contact-comment">Comment</label>
-                        <textarea name="comment" id="contact-comment" rows="6" cols="30"></textarea>
-
-                        <button type="submit">Submit</button>
-                        </form>
+                <div class="contact-static">
+                    <p class="intro">If you have questions, ideas, or feedback about Tech Trivia, reach out by email. We read messages about the site, the question bank, and how we can improve the quiz experience.</p>
+                    <p>Email: <a href="mailto:contact@techtrivia.example">contact@techtrivia.example</a></p>
+                    <p class="contact-note">This page is for contact information only; messages are not submitted through the website.</p>
                 </div>
             </div>
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
-    <script src="js/forms.js" defer></script>
 </body>
 </html>
