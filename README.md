@@ -1,6 +1,6 @@
 # Tech Trivia Quiz Website
 
-This project is a course website for an online trivia community that wants a fun, interactive way to test tech knowledge. Players can take quizzes by category or difficulty, view scores, and check a leaderboard. Admin users can sign in and manage trivia questions and site content.
+This project is a multi-page trivia site about technology. Users pick a category and difficulty, take a short quiz, and store scores that appear on a leaderboard. Administrators can log in and maintain the question bank.
 
 The project is intentionally built with a restricted stack:
 
@@ -12,9 +12,7 @@ The project is intentionally built with a restricted stack:
 
 No frontend frameworks or third-party UI libraries should be used.
 
-For the full **graded course expectations** (page count, validators, file naming, images/CSS folders, external links, database requirements, etc.), see [`docs/course-expectations.md`](docs/course-expectations.md).
-
-**What is still open for the team (short checklist):** [`docs/remaining-work.md`](docs/remaining-work.md)
+For the **graded rubric** and a **pre-submission checklist**, see [`docs/course-expectations.md`](docs/course-expectations.md).
 
 ## Project Goals
 
@@ -213,67 +211,6 @@ General workflow:
 - Escape output when rendering database content back to the page.
 
 **Quizzes** (`easyquiz.php`, `mediumquiz.php`, `hardquiz.php`) require a logged-in user. Each run loads `QUIZ_QUESTION_COUNT` questions (default `5` in `includes/config.php`) from a chosen category and difficulty; the database must have at least that many rows for the pair or the page shows an error. The leaderboard is public and reads from `quiz_attempts`.
-
-## Team Work Split From Proposal
-
-- `James`: backend, admin features, database setup, authentication, validation
-- `Marissa`: core frontend pages, layout, navigation, responsive design, accessibility text
-- `Yuheng`: quiz UI, answer interaction, JavaScript behavior, styling refinement
-
-## File Ownership Guide
-
-This section maps the proposal work split to the actual project files so everyone knows what they are primarily responsible for.
-
-### James
-
-- `includes/db.php` - database connection setup
-- `includes/auth.php` - login/session protection helpers
-- `includes/functions.php` - reusable backend helper functions
-- `includes/config.php` - app settings and constants
-- `sql/schema.sql` - database schema for users, questions, categories, and scores
-- `login.php` - backend login handling and validation
-- `register.php` - account creation backend
-- `logout.php` - session logout logic
-- `leaderboard.php` - backend score retrieval and ranking data
-- `admindashboard.php` - admin-only backend logic and protected access
-- `managequestions.php` - add, edit, and delete trivia questions
-- `easyquiz.php` - server-side question loading and grading for easy quizzes
-- `mediumquiz.php` - server-side question loading and grading for medium quizzes
-- `hardquiz.php` - server-side question loading and grading for hard quizzes
-
-James is mainly responsible for the database, authentication, server-side validation, quiz grading, admin functionality, and final integration/testing.
-
-### Marissa
-
-- `index.html` - landing page content and layout
-- `about.html` - project/client explanation page
-- `categories.html` - category browsing page layout
-- `contact.html` - contact page content and structure
-- `includes/header.php` - shared header and navbar markup
-- `includes/footer.php` - shared footer markup
-- `css/reset.css` - baseline browser style reset if used
-- `css/style.css` - main shared site styling
-
-Marissa is mainly responsible for the shared site layout, navigation, responsive page structure, media-query behavior, and accessibility-minded content styling.
-
-### Yuheng
-
-- `easyquiz.php` - quiz page UI structure on the frontend side
-- `mediumquiz.php` - quiz page UI structure on the frontend side
-- `hardquiz.php` - quiz page UI structure on the frontend side
-- `js/quiz.js` - answer selection and quiz interaction behavior
-- `js/forms.js` - client-side form handling where needed
-- `js/admin.js` - admin page interaction behavior if any frontend scripting is needed
-
-Yuheng is mainly responsible for quiz interaction patterns, answer selection behavior, client-side UI feedback, and refinement of the quiz page experience.
-
-### Shared Integration
-
-- `leaderboard.php` - backend data by James, table/layout styling by frontend team
-- `login.php` and `register.php` - backend processing by James, form layout/styling by frontend team
-- `easyquiz.php`, `mediumquiz.php`, and `hardquiz.php` - backend logic by James, frontend layout and interaction by Marissa/Yuheng
-
-These pages are shared because they need both backend logic and frontend presentation to feel complete.
 
 ## Next Build Order
 

@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/db.php';
 
-/**
- * User's highest single-quiz score (max of score column), or null if no attempts.
- */
+/** Best single-quiz score for a user, or null if they have no attempts. */
 function user_best_score(?int $userId): ?int
 {
     if ($userId === null || $userId < 1) {
@@ -22,9 +20,7 @@ function user_best_score(?int $userId): ?int
     return (int) $m;
 }
 
-/**
- * Rank 1 = best among all users, by each user's best single-game score (ties get same rank logic: strict greater only).
- */
+/** Leaderboard-style rank (1 is best) from each user's best single-quiz score. */
 function user_rank_by_best_score(?int $userId): ?int
 {
     if ($userId === null || $userId < 1) {

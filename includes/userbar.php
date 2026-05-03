@@ -19,9 +19,9 @@ if (auth_is_logged_in()) {
     <?php if (auth_is_logged_in()): ?>
         <span class="user-bar-name"><?= h(auth_username()) ?></span>
         <?php if ($barRank === null): ?>
-            <span class="user-bar-rank-inline user-bar-muted" title="Complete a quiz to get a rank">&mdash;</span>
+            <span class="user-bar-rank-inline user-bar-muted" title="No rank until you complete a quiz">-</span>
         <?php else: ?>
-            <span class="user-bar-rank-inline" title="Rank by best single-quiz score (1 is best)">#<?= (int) $barRank ?></span>
+            <span class="user-bar-rank-inline" title="Rank from your best single quiz; lower numbers are better">#<?= (int) $barRank ?></span>
         <?php endif; ?>
         <?php if (auth_is_admin()): ?>
             <span class="user-bar-sep">|</span>

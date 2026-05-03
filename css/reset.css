@@ -1,1 +1,6 @@
-/* Marissa: optional CSS reset rules go here. */
+/* Optional baseline reset; main rules live in style.css. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

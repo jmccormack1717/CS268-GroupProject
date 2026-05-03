@@ -5,7 +5,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 
 /**
- * Shared PDO connection (singleton per request).
+ * Return the shared PDO instance for this request.
  *
  * @throws PDOException if the connection fails
  */

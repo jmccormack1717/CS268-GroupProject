@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($emailValue === '') {
         $errors[] = 'Email is required.';
     } elseif (filter_var($emailValue, FILTER_VALIDATE_EMAIL) === false) {
-        $errors[] = 'Please enter a valid email address.';
+        $errors[] = 'Enter a valid email address.';
     }
 
     if ($password === '') {
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'p' => $hash,
             ]);
         } catch (PDOException) {
-            $errors[] = 'Could not create account. Please try again.';
+            $errors[] = 'Could not create account. Try again.';
         }
         if ($errors === []) {
             redirect('login.php?registered=1');
@@ -80,7 +80,7 @@ $pageTitle = 'Register';
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
@@ -118,5 +118,6 @@ $pageTitle = 'Register';
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
+    <script src="js/forms.js" defer></script>
 </body>
 </html>

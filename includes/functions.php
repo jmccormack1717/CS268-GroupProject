@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-/**
- * Escape output for HTML (text nodes and most attributes). Use context-appropriate
- * escaping for URLs or JavaScript when those are added later.
- */
+/** Escape a string for safe output inside HTML text or attributes. */
 function h(?string $value): string
 {
     return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
@@ -33,9 +30,7 @@ function redirect(string $location): void
     exit;
 }
 
-/**
- * Shorten text for a table cell (avoids very long one-line questions).
- */
+/** Truncate text for table previews. */
 function preview_string(string $value, int $max = 80): string
 {
     if (function_exists('mb_strimwidth')) {

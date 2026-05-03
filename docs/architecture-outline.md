@@ -1,8 +1,8 @@
 # Architecture Outline
 
-This document turns the project proposal into a concrete implementation outline for a vanilla `HTML/CSS/JavaScript/PHP/MySQL` web app.
+This file is an implementation outline for the site using HTML, CSS, JavaScript, PHP, and MySQL without front-end frameworks.
 
-For a **short current-team checklist** (validators, JS polish, images, etc.), see [`remaining-work.md`](remaining-work.md).
+Graded requirements and a submission checklist are in [`course-expectations.md`](course-expectations.md).
 
 ## 1. High-Level Structure
 
@@ -242,40 +242,7 @@ Even for a class project, these basics should be included:
 - Validate HTML and CSS
 - Clean up accessibility issues and naming conventions
 
-## 10. Team Ownership
-
-The project is organized so each teammate can work inside a clear area while still meeting at a few shared integration points.
-
-### James
-
-- Primary files: `includes/db.php`, `includes/auth.php`, `includes/functions.php`, `includes/config.php`, `sql/schema.sql`
-- Main pages: `login.php`, `register.php`, `logout.php`, `leaderboard.php`, `admindashboard.php`, `managequestions.php`
-- Shared quiz/backend pages: `easyquiz.php`, `mediumquiz.php`, `hardquiz.php`
-
-James owns the backend architecture, database schema, authentication/session flow, admin protection, CRUD for questions, score storage, grading logic, and integration testing.
-
-### Marissa
-
-- Primary files: `index.html`, `about.html`, `categories.html`, `contact.html`, `includes/header.php`, `includes/footer.php`, `css/reset.css`, `css/style.css`
-
-Marissa owns the shared layout system, static page content, navbar/footer structure, responsive styling, and accessibility-related presentation decisions.
-
-### Yuheng
-
-- Primary files: `js/quiz.js`, `js/forms.js`, `js/admin.js`
-- Shared quiz pages: `easyquiz.php`, `mediumquiz.php`, `hardquiz.php`
-
-Yuheng owns quiz UI behavior, answer selection logic, client-side interaction feedback, and refinement of the quiz page experience.
-
-### Shared Files
-
-- `login.php` and `register.php` - backend logic plus frontend form structure
-- `leaderboard.php` - backend data plus frontend table presentation
-- `easyquiz.php`, `mediumquiz.php`, `hardquiz.php` - backend question/grading logic plus frontend quiz markup and interaction
-
-These files are shared because they need both server-side behavior and frontend presentation work.
-
-## 11. Minimal Viable Version
+## 10. Minimal Viable Version
 
 If time becomes tight, the minimum strong submission should still include:
 

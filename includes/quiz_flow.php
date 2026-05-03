@@ -43,11 +43,11 @@ if (!$guest) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && (string) ($_POST['form'] ?? '') === 'submit_quiz') {
     $active = $_SESSION['active_quiz'] ?? null;
     if (!is_array($active) || (string) ($active['page'] ?? '') !== $selfPage) {
-        $formError = 'This quiz has expired. Please start again.';
+        $formError = 'This quiz session is no longer valid. Start the quiz again.';
     } else {
         $ids = $active['question_ids'] ?? [];
         if (!is_array($ids) || $ids === []) {
-            $formError = 'No questions in session. Please start again.';
+            $formError = 'No questions in session. Start the quiz again.';
         } else {
             $catId = (int) ($active['category_id'] ?? 0);
             if ((string) ($active['difficulty'] ?? '') !== $difficulty) {
@@ -171,7 +171,7 @@ if ($loadError !== '') {
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
@@ -192,7 +192,7 @@ if ($loadError !== '') {
                         &middot; <a href="<?= h($leaderLink) ?>">Leaderboard</a>
                     </p>
                 <?php elseif ($mode === 'finished_empty'): ?>
-                    <p class="form-error">Result already shown. <a href="<?= h($selfPage) ?>">Start a new quiz</a> or <a href="<?= h($leaderLink) ?>">view the leaderboard</a>.</p>
+                    <p class="form-error">That score was already shown. <a href="<?= h($selfPage) ?>">Start a new quiz</a> or open the <a href="<?= h($leaderLink) ?>">leaderboard</a>.</p>
                 <?php elseif ($mode === 'load_error'): ?>
                     <p class="form-error"><?= h($loadError) ?></p>
                     <p><a href="<?= h($selfPage) ?>">Back</a></p>
@@ -241,5 +241,6 @@ if ($loadError !== '') {
         </div>
         <?php require __DIR__ . '/footer.php'; ?>
     </div>
+    <script src="js/quiz.js" defer></script>
 </body>
 </html>

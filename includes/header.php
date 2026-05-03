@@ -6,7 +6,7 @@ require_once __DIR__ . '/auth.php';
 auth_bootstrap();
 require __DIR__ . '/userbar.php';
 ?>
-<div class="header">
+<header class="header" role="banner">
     <?php if (auth_is_logged_in()): ?>
         <a href="logout.php" class="tButton">Log out</a>
         <br>
@@ -22,4 +22,4 @@ require __DIR__ . '/userbar.php';
         <li class="button"><a href="leaderboard.php">Leaderboard</a></li>
         <li class="button"><a href="contact.php">Contact</a></li>
     </ul>
-</div>
+</header>

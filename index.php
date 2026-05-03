@@ -10,30 +10,29 @@ auth_bootstrap();
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
         <?php require __DIR__ . '/includes/header.php'; ?>
         <div class="main">
             <div class="content">
-                <h1><B>Time to Test Your Tech Knowledge</B></h1>
+                <h1>Time to Test Your Tech Knowledge</h1>
                     <div class="index">
                         <div class="aboutIndex">
                             <h3>About Tech Trivia</h3>
-                            <p>Tech Trivia is an interactive quiz platform, 
-                                created to test your technology knowledge using trivia questions. There is a challenge for you whether you are a beginner or expert. </p>
+                            <p>Tech Trivia is for people who like technology and for people who like quiz games. Choose a difficulty, answer technology questions, then compare your score on the leaderboard.</p>
                             <a href="about.html">Learn More</a>
                         </div>
 
                         <div class="challenge">
-                            <img class="leftImg" src="images/question-mark-hi.png" alt="question mark">
+                            <img class="leftImg" src="images/questionmarkhi.png" alt="Question mark icon">
                             <div class="aboutIndex">
                                 <h3>Choose Your Challenge</h3>
-                                <p>Lets see how much you really know. Click the button if you are ready your test your knowledge.</p>
+                                <p>Select a difficulty on the next page when you are ready to begin.</p>
                                 <a class="button" href="categories.html">Start a quiz</a>
                             </div>
-                            <img class="rightImg" src="images/brain.png" alt="animated brain">
+                            <img class="rightImg" src="images/brain.png" alt="Cartoon brain illustration">
                         </div>
                         
                         

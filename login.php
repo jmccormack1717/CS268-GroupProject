@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = (string) ($_POST['password'] ?? '');
 
     if ($loginValue === '' || $password === '') {
-        $error = 'Please enter your username or email and password.';
+        $error = 'Enter your username or email and password.';
     } else {
         $stmt = db()->prepare(
             'SELECT id, username, password_hash, role FROM users WHERE username = :u OR email = :e LIMIT 1'
@@ -46,7 +46,7 @@ $pageTitle = 'Login';
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
@@ -79,5 +79,6 @@ $pageTitle = 'Login';
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
+    <script src="js/forms.js" defer></script>
 </body>
 </html>

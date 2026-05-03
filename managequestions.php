@@ -212,7 +212,7 @@ $showAddForm = $editId === 0;
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
@@ -229,7 +229,7 @@ $showAddForm = $editId === 0;
                 <?php elseif ($flash === 'deleted'): ?>
                     <p class="form-success">Question deleted.</p>
                 <?php elseif ($flash === 'error'): ?>
-                    <p class="form-error">Something went wrong.</p>
+                    <p class="form-error">The last action did not complete.</p>
                 <?php endif; ?>
 
                 <?php if ($categoryCount < 1): ?>
@@ -402,5 +402,6 @@ $showAddForm = $editId === 0;
         </div>
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
+    <script src="js/admin.js" defer></script>
 </body>
 </html>

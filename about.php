@@ -13,21 +13,20 @@ $pageTitle = 'About';
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
         <?php require __DIR__ . '/includes/header.php'; ?>
         <div class="main">
             <div class="content">
-                <h1><b>About</b></h1>
+                <h1>About</h1>
                 <div class="aboutContent">
-                        <p class="intro">Tech Trivia is a course website for an online trivia community that wants a fun, interactive way to test their technology knowledge. </p>
-                        
+                        <p class="intro">The client for this project is people who like technology topics and people who like trivia-style games. The site supports both groups with multiple-choice quizzes by difficulty and a score leaderboard.</p>
+
                         <div class="mission">
-                        <h2>Our Mission</h2>
-                        <p>To make learning and testing your knowledge about technology fun and interactive through 
-                        our trivia challenges.</p>
+                        <h2>Mission</h2>
+                        <p>The site should help users practice technology facts in a short quiz format and show clear feedback after each attempt.</p>
                         </div>
 
                         <div class="features">
@@ -41,7 +40,7 @@ $pageTitle = 'About';
                                     <li>Admins can manage questions</li>
                                 </ul>
                             </div>
-                            <img src="images/Computer.webp" alt="Computer image">
+                            <img src="images/computer.webp" alt="Stylized desktop computer illustration">
                         </div>
                         
                     </div>

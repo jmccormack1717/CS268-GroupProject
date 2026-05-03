@@ -1,4 +1,4 @@
-// Small helpers for the admin question page.
+// Admin question forms: required-field check and question length counter.
 document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('form.q-form');
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (missing.length > 0) {
                 event.preventDefault();
-                alert('Please fill in all question fields before saving.');
+                alert('Fill in all required fields before saving.');
                 missing[0].focus();
             }
         });

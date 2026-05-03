@@ -1,4 +1,4 @@
-// Small quiz page helper. The server still checks the final score.
+// Quiz UI helpers. Scoring stays on the server.
 document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('form.q-form');
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (firstInput) {
                     firstInput.focus();
                 }
-                alert('Please answer every question before submitting.');
+                alert('Answer every question before you submit.');
             }
         });
 

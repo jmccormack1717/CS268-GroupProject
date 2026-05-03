@@ -13,15 +13,15 @@ $pageTitle = 'Categories';
 <head>
     <meta charset="utf-8">
     <title><?= h($pageTitle) ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <?php require __DIR__ . '/includes/head_assets.php'; ?>
 </head>
 <body>
     <div id="container">
         <?php require __DIR__ . '/includes/header.php'; ?>
         <div class="main">
             <div class="content">
-                <h1><B>Categories</B></h1>
-                    <p><b>Its time to pick what level of difficulty quiz you want to take!</b></p>
+                <h1>Categories</h1>
+                    <p><b>Select a difficulty level for your quiz.</b></p>
                     <br>
                     <div class="catContent">
                         <div class="easy">
@@ -30,7 +30,7 @@ $pageTitle = 'Categories';
                         </div>
 
                         <div class="medium">
-                            <p >If you have an intermediete level of knowledge about technology, try the medium quiz.</p>
+                            <p>If you have an intermediate level of knowledge about technology, try the medium quiz.</p>
                             <a href="mediumquiz.php">Medium Quiz</a>
                         </div>
                         
@@ -41,7 +41,7 @@ $pageTitle = 'Categories';
                         
                     </div>
                     <br>
-                    <p ><b>We wish you the best of luck! Don't forget to check the leaderboard after the quiz. <img class="catImage" src="images/thumbsup.png"></b></p>
+                    <p><b>After you finish, open the leaderboard to see how your score compares. <img class="catImage" src="images/thumbsup.png" alt="Thumbs-up icon"></b></p>
                     
                 </div>
             </div>
