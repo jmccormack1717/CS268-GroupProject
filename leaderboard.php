@@ -10,17 +10,18 @@ auth_bootstrap();
 
 $pageTitle = 'Leaderboard';
 
-$stmt = db()->query(
-    'SELECT qa.score, qa.total_questions, qa.difficulty, qa.completed_at, u.username, c.name AS category_name
-     FROM quiz_attempts qa
-     INNER JOIN users u ON u.id = qa.user_id
-     INNER JOIN categories c ON c.id = qa.category_id
-     ORDER BY qa.score DESC, qa.completed_at ASC
-     LIMIT 100'
-);
-$rows = $stmt->fetchAll();
-if (!is_array($rows)) {
-    $rows = [];
+$rows = [];
+if (auth_is_logged_in()) {
+    $stmt = db()->query(
+        'SELECT qa.score, qa.total_questions, qa.difficulty, qa.completed_at, u.username, c.name AS category_name
+         FROM quiz_attempts qa
+         INNER JOIN users u ON u.id = qa.user_id
+         INNER JOIN categories c ON c.id = qa.category_id
+         ORDER BY qa.score DESC, qa.completed_at ASC
+         LIMIT 100'
+    );
+    $fetched = $stmt->fetchAll();
+    $rows = is_array($fetched) ? $fetched : [];
 }
 ?>
 <!DOCTYPE html>
@@ -36,43 +37,49 @@ if (!is_array($rows)) {
         <div class="main">
             <div class="content admin-content">
                 <h1><?= h($pageTitle) ?></h1>
-                <p>Best scores on record (up to 100 rows). Ties: higher score first, then earlier attempt.</p>
-                <?php if ($rows === []): ?>
-                    <p class="form-error">No quiz attempts yet. Take a quiz and submit your answers to appear here.</p>
+
+                <?php if (!auth_is_logged_in()): ?>
+                    <p>Log in to view the leaderboard.</p>
+                    <p><a href="login.php">Log in</a> &middot; <a href="register.php">Register</a></p>
                 <?php else: ?>
-                    <div class="table-wrap">
-                        <table class="data-table">
-                            <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>User</th>
-                                <th>Score</th>
-                                <th>Out of</th>
-                                <th>Difficulty</th>
-                                <th>Category</th>
-                                <th>When</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $r = 0;
-                            foreach ($rows as $row):
-                                $r++;
-                                $when = (string) $row['completed_at'];
-                                ?>
+                    <p>Best scores on record (up to 100 rows). Ties: higher score first, then earlier attempt.</p>
+                    <?php if ($rows === []): ?>
+                        <p class="form-error">No quiz attempts yet. Take a quiz and submit your answers to appear here.</p>
+                    <?php else: ?>
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
                                 <tr>
-                                    <td><?= h((string) $r) ?></td>
-                                    <td><?= h((string) $row['username']) ?></td>
-                                    <td><?= h((string) (int) $row['score']) ?></td>
-                                    <td><?= h((string) (int) $row['total_questions']) ?></td>
-                                    <td><?= h((string) $row['difficulty']) ?></td>
-                                    <td><?= h((string) $row['category_name']) ?></td>
-                                    <td><?= h($when) ?></td>
+                                    <th>Rank</th>
+                                    <th>User</th>
+                                    <th>Score</th>
+                                    <th>Out of</th>
+                                    <th>Difficulty</th>
+                                    <th>Category</th>
+                                    <th>When</th>
                                 </tr>
-                            <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $r = 0;
+                                foreach ($rows as $row):
+                                    $r++;
+                                    $when = (string) $row['completed_at'];
+                                    ?>
+                                    <tr>
+                                        <td><?= h((string) $r) ?></td>
+                                        <td><?= h((string) $row['username']) ?></td>
+                                        <td><?= h((string) (int) $row['score']) ?></td>
+                                        <td><?= h((string) (int) $row['total_questions']) ?></td>
+                                        <td><?= h((string) $row['difficulty']) ?></td>
+                                        <td><?= h((string) $row['category_name']) ?></td>
+                                        <td><?= h($when) ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         </div>

@@ -32,7 +32,7 @@ $pageTitle = 'Admin dashboard';
                 <p>Questions: <?= h((string) $countQ) ?> &middot; Users: <?= h((string) $countU) ?> &middot; Quiz attempts: <?= h((string) $countA) ?></p>
                 <ul>
                     <li><a href="managequestions.php">Manage questions</a></li>
-                    <li><a href="leaderboard.php">Leaderboard</a> (public)</li>
+                    <li><a href="leaderboard.php">Leaderboard</a> (requires sign-in)</li>
                     <li><a href="logout.php">Log out</a></li>
                     <li><a href="index.php">Home</a></li>
                 </ul>

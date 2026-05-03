@@ -35,7 +35,7 @@ The application should be split into three simple layers:
 
 - `index.html`: landing page, site intro, featured categories
 - `about.html`: explains the client, problem, and project purpose
-- `categories.html`: lets users browse quiz topics
+- `categories.html`: explains each quiz category and why it matters in CS
 - `contact.html`: contact or feedback information
 
 ### Quiz Pages
@@ -43,7 +43,7 @@ The application should be split into three simple layers:
 - `easyquiz.php`: serves easy questions
 - `mediumquiz.php`: serves medium questions
 - `hardquiz.php`: serves hard questions
-- `leaderboard.php`: shows top scores and rankings
+- `leaderboard.php`: shows top scores and rankings (signed-in users only)
 
 ### Auth Pages
 

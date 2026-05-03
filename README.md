@@ -47,7 +47,7 @@ The assignment requires at least 10 separate pages. This project plan uses the f
 
 1. `index.html` - Redirects to `index.php` (canonical home with shared nav and account bar)
 2. `about.html` / `about.php` - Project background (`about.php` has full site chrome; `.html` redirects)
-3. `categories.html` / `categories.php` - Category page (same pattern)
+3. `categories.html` / `categories.php` - Category overview text (same `.html` redirect pattern)
 4. `easyquiz.php` - Easy difficulty quiz
 5. `mediumquiz.php` - Medium difficulty quiz
 6. `hardquiz.php` - Hard difficulty quiz
@@ -210,7 +210,7 @@ General workflow:
 - Store passwords using PHP password hashing functions.
 - Escape output when rendering database content back to the page.
 
-**Quizzes** (`easyquiz.php`, `mediumquiz.php`, `hardquiz.php`) require a logged-in user. Each run loads `QUIZ_QUESTION_COUNT` questions (default `5` in `includes/config.php`) from a chosen category and difficulty; the database must have at least that many rows for the pair or the page shows an error. The leaderboard is public and reads from `quiz_attempts`.
+**Quizzes** (`easyquiz.php`, `mediumquiz.php`, `hardquiz.php`) require a logged-in user. Each run loads `QUIZ_QUESTION_COUNT` questions (default `5` in `includes/config.php`) from a chosen category and difficulty; the database must have at least that many rows for the pair or the page shows an error. **Leaderboard** (`leaderboard.php`) also requires a logged-in user and reads from `quiz_attempts`.
 
 ## Next Build Order
 

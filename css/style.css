@@ -160,6 +160,43 @@ textarea {
     gap: 20px;
     align-items: stretch;
 }
+
+.categories-lead,
+.categories-foot {
+    text-align: left;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-overview {
+    text-align: left;
+    max-width: 42rem;
+    margin: 1rem auto 1.5rem auto;
+}
+
+.category-block {
+    margin-bottom: 1.25rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.category-block h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+}
+
+.category-desc {
+    margin: 0 0 0.5rem 0;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+.category-why {
+    margin: 0;
+}
 .easy, .medium, .hard {
     min-width: 0;
     padding: 20px;
@@ -489,6 +526,12 @@ a.admin-badge:hover {
 
     .catContent {
         grid-template-columns: 1fr;
+    }
+
+    .categories-lead,
+    .categories-foot,
+    .category-overview {
+        max-width: 92%;
     }
 
     .features {
