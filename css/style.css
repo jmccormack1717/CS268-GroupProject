@@ -157,12 +157,6 @@ li.button a:hover {
     max-width: 40rem;
 }
 
-.contact-static .contact-note {
-    margin-top: 1.25rem;
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
 label {
     text-align: left;
     margin-top: 10px;
