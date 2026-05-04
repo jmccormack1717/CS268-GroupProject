@@ -198,7 +198,7 @@ General workflow:
 2. Create a MySQL database for the app.
 3. Initialize the database using **one** of these:
    - **phpMyAdmin:** Import `sql/schema.sql` (**Import** tab). It creates the **`techtrivia`** database, tables, and default categories. Until you do this, PHP pages will fail with **Unknown database 'techtrivia'**. If you already have an old database without categories, also run `sql/seedcategories.sql` once.
-   - **PHP script (submission / XAMPP):** With Apache and MySQL running, open `initdb.php` in the browser once (for example `http://localhost/CS268-GroupProject/initdb.php`). It runs the same `sql/schema.sql`. If the database is already set up, it prints a short message and does nothing.
+   - **PHP script (submission / XAMPP):** With Apache and MySQL running, open `initdb.php` in the browser once (for example `http://localhost/CS268-GroupProject-main/initdb.php`). It runs the same `sql/schema.sql`. If the database is already set up, it prints a short message and does nothing.
 4. Update database credentials in `includes/config.php` (host, database name, user, password) if yours differ from the defaults.
 5. Start Apache and MySQL.
 6. Open the site through your local server, not directly by double-clicking the files.
