@@ -17,7 +17,25 @@ if (auth_is_logged_in()) {
          FROM quiz_attempts qa
          INNER JOIN users u ON u.id = qa.user_id
          INNER JOIN categories c ON c.id = qa.category_id
-         ORDER BY qa.score DESC, qa.completed_at ASC
+         WHERE NOT EXISTS (
+             SELECT 1
+             FROM quiz_attempts qa2
+             WHERE qa2.user_id = qa.user_id
+               AND (
+                   qa2.score > qa.score
+                   OR (
+                       qa2.score = qa.score
+                       AND (
+                           qa2.completed_at < qa.completed_at
+                           OR (
+                               qa2.completed_at = qa.completed_at
+                               AND qa2.id < qa.id
+                           )
+                       )
+                   )
+               )
+         )
+         ORDER BY qa.score DESC, qa.completed_at ASC, qa.id ASC
          LIMIT 100'
     );
     $fetched = $stmt->fetchAll();
@@ -42,7 +60,7 @@ if (auth_is_logged_in()) {
                     <p>Log in to view the leaderboard.</p>
                     <p><a href="login.php">Log in</a> &middot; <a href="register.php">Register</a></p>
                 <?php else: ?>
-                    <p>Best scores on record (up to 100 rows). Ties: higher score first, then earlier attempt.</p>
+                    <p>Each user appears once with their best score (up to 100 users). Ordering: higher score first, then earlier date for that best run.</p>
                     <?php if ($rows === []): ?>
                         <p class="form-error">No quiz attempts yet. Take a quiz and submit your answers to appear here.</p>
                     <?php else: ?>
@@ -52,7 +70,7 @@ if (auth_is_logged_in()) {
                                 <tr>
                                     <th>Rank</th>
                                     <th>User</th>
-                                    <th>Score</th>
+                                    <th>Best score</th>
                                     <th>Out of</th>
                                     <th>Difficulty</th>
                                     <th>Category</th>
