@@ -20,7 +20,7 @@ function user_best_score(?int $userId): ?int
     return (int) $m;
 }
 
-/** Leaderboard-style rank (1 is best) from each user's best single-quiz score. */
+/** Rank (1 is best) by each user's best single-quiz score. */
 function user_rank_by_best_score(?int $userId): ?int
 {
     if ($userId === null || $userId < 1) {

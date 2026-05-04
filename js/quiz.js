@@ -1,4 +1,4 @@
-// Quiz UI helpers. Scoring stays on the server.
+// Quiz UI only; scoring is server-side.
 document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('form.q-form');
 

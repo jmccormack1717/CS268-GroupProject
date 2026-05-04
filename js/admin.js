@@ -1,4 +1,4 @@
-// Admin question forms: required-field check and question length counter.
+// Admin forms: required fields and question length counter.
 document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('form.q-form');
 

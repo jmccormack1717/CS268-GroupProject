@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/auth.php';
-require_once __DIR__ . '/user_stats.php';
+require_once __DIR__ . '/userstats.php';
 
 auth_bootstrap();
 

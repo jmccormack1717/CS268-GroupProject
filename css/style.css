@@ -85,8 +85,7 @@ li.button a:hover {
     flex-direction: column;
 }
 
-/* Inline links on blue background — :where() keeps specificity low so
-   .aboutIndex > a, .catContent a, .footer > a, li.button a, etc. still win. */
+/* Default link color in .content; :where() keeps specificity below nav/button rules. */
 :where(.content) a:link,
 :where(.content) a:visited {
     color: #ffe9a8;
@@ -316,7 +315,7 @@ textarea {
     color: #b3ffb3;
 }
 
-/* Admin: manage questions */
+/* Admin question editor */
 .admin-content {
     text-align: left;
     padding: 0.5rem 1rem 1.5rem 1rem;
@@ -451,7 +450,7 @@ textarea {
     font-weight: normal;
 }
 
-/* Account strip (all PHP pages via header; index.php and static home include explicitly) */
+/* Fixed account bar */
 .user-bar {
     position: fixed;
     top: 0;

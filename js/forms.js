@@ -1,8 +1,6 @@
-// Client-side checks only. The server still validates on POST where implemented.
 document.addEventListener('DOMContentLoaded', function () {
     setupLoginForm();
     setupRegisterForm();
-    setupContactForm();
 });
 
 function showFormMessage(form, message, ok) {
@@ -74,49 +72,3 @@ function setupRegisterForm() {
         }
     });
 }
-
-function setupContactForm() {
-    var form = document.querySelector('.contact-form');
-    if (!form) {
-        return;
-    }
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        validateContactForm();
-    });
-}
-
-function validateContactForm() {
-    var form = document.querySelector('.contact-form');
-    if (!form) {
-        return false;
-    }
-
-    var name = getValue(form, '[name="name"]');
-    var email = getValue(form, '[name="email"]');
-    var comment = getValue(form, '[name="comment"]');
-
-    if (name === '') {
-        showFormMessage(form, 'Enter your name.', false);
-        return false;
-    }
-    if (!looksLikeEmail(email)) {
-        showFormMessage(form, 'Enter a valid email address.', false);
-        return false;
-    }
-    if (comment.length < 10) {
-        showFormMessage(form, 'Comment must be at least 10 characters.', false);
-        return false;
-    }
-
-    showFormMessage(
-        form,
-        'Input is valid. This form does not send mail because no server handler is set up.',
-        true
-    );
-    form.reset();
-    return true;
-}
-
-window.validateContactForm = validateContactForm;

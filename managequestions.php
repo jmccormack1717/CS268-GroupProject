@@ -233,7 +233,7 @@ $showAddForm = $editId === 0;
                 <?php endif; ?>
 
                 <?php if ($categoryCount < 1): ?>
-                    <p class="form-error">No categories in the database. Import <code>sql/seed_categories.sql</code> or re-import <code>sql/schema.sql</code>.</p>
+                    <p class="form-error">No categories in the database. Import <code>sql/seedcategories.sql</code> or re-import <code>sql/schema.sql</code>.</p>
                 <?php endif; ?>
 
                 <h2>All questions</h2>

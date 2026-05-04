@@ -37,9 +37,7 @@ function db(): PDO
         if (str_contains($m, '1049') || str_contains($m, 'Unknown database')) {
             http_response_code(503);
             header('Content-Type: text/plain; charset=UTF-8');
-            echo "MySQL database is missing (expected name: " . DB_NAME . ").\n\n"
-                . "Fix: open phpMyAdmin, use the Import tab, and run sql/schema.sql from this project.\n"
-                . "That file creates the database and tables. Then reload this page.\n";
+            echo "Database '" . DB_NAME . "' is missing. Import sql/schema.sql into MySQL, then reload.\n";
             exit;
         }
         throw $e;
